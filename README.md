@@ -1,57 +1,91 @@
 # 🚀 Nextcloud – Setup-Wizard
+
 **Ein interaktives Bash‑Skript für die automatisierte Installation und Optimierung von Nextcloud auf Debian/Ubuntu.**
 
 ![GitHub stars](https://img.shields.io/github/stars/NeuSmartRa-Systems/nextcloud-setup-wizard)
 ![GitHub forks](https://img.shields.io/github/forks/NeuSmartRa-Systems/nextcloud-setup-wizard)
 ![GitHub issues](https://img.shields.io/github/issues/NeuSmartRa-Systems/nextcloud-setup-wizard)
 ![License](https://img.shields.io/github/license/NeuSmartRa-Systems/nextcloud-setup-wizard)
+
 ---
 
-## ✨ Features
+## 📸 Screenshots
 
-- **All-in-One:** Apache2, MariaDB, Redis, Fail2ban, PHP‑Erweiterungen
-- **Optimierung:** PHP (upload, memory, opcache), MariaDB (InnoDB), Apache (mpm_prefork)
-- **Sicherheit:** MariaDB‑Härtung, Fail2ban‑Filter für Nextcloud‑Logs, Redis‑Passwort
-- **Betrieb:** Cron‑Job, Log‑Rotation, vollständiges Installations‑Log
-- **Erweitert:** Let’s Encrypt, Web‑Updater, Redis‑Session, empfohlene Apps (Calendar, Contacts, Talk, OnlyOffice, Deck, Tasks, Notes)
+<table>
+  <tr>
+    <td><img src="screenshots/start.png" alt="Startbildschirm" width="400"/></td>
+    <td><img src="screenshots/config.png" alt="Konfigurationsmenü" width="400"/></td>
+  </tr>
+  <tr>
+    <td><img src="screenshots/summary.png" alt="Zusammenfassung" width="400"/></td>
+    <td><img src="screenshots/done.png" alt="Erfolgreiche Installation" width="400"/></td>
+  </tr>
+</table>
+
+---
+
+## ✨ Features auf einen Blick
+
+| Bereich | Funktion |
+|---------|----------|
+| **Installation** | Apache2, MariaDB, Redis, Fail2ban, PHP‑Erweiterungen |
+| **Optimierung** | PHP (upload, memory, opcache), MariaDB (InnoDB), Apache (mpm_prefork) |
+| **Sicherheit** | MariaDB‑Härtung, Fail2ban‑Filter, Redis‑Passwort |
+| **Betrieb** | Cron‑Job, Log‑Rotation, vollständiges Installations‑Log |
+| **Erweitert** | Let's Encrypt, Web‑Updater, Redis‑Session, empfohlene Apps (Calendar, Contacts, Talk, OnlyOffice, Deck, Tasks, Notes) |
 
 ---
 
 ## 🖥️ Installation
 
 ```bash
+# Repository klonen
 git clone https://github.com/NeuSmartRa-Systems/nextcloud-setup-wizard.git
 cd nextcloud-setup-wizard
-chmod +x nc-setup-wizard.sh.sh
-sudo ./nc-setup-wizard.sh.sh
+
+# Skript ausführbar machen
+chmod +x nc-setup-wizard.sh
+
+# Installation starten (Root-Rechte werden automatisch verlangt)
+sudo ./nc-setup-wizard.sh
 ```
 
-Das Skript installiert fehlende Abhängigkeiten (curl, gpg, sudo, gum) selbstständig.
+Das Skript installiert fehlende Abhängigkeiten (`curl`, `gpg`, `sudo`, `gum`) selbstständig.
 
 ---
 
 ## ⚙️ Interaktive Konfiguration
 
-Während der Ausführung werden Sie Schritt für Schritt gefragt:
+Während der Ausführung wirst du Schritt für Schritt durch die Konfiguration geführt:
 
-- **Pakete** (Apache, MariaDB, Redis, Fail2ban)
-- **Netzwerk** (Domain, lokale IP, Proxy‑IP, trusted_domains)
-- **Admin‑Benutzer** (Name, Passwort – bei Leer‑Eingabe wird eines generiert)
+- **Pakete** (Apache, MariaDB, Redis, Fail2ban – jeweils optional)
+- **Netzwerk** (Domain, lokale IP, Proxy‑IP, zusätzliche trusted_domains)
+- **Admin‑Benutzer** (Name, Passwort – bei Leer‑Eingabe wird ein sicheres generiert)
 - **Datenbank** (Name, Benutzer, Passwort, Root‑Passwort)
 - **Pfade** (Installations‑ und Datenverzeichnis)
 - **Optimierungen** (PHP, MariaDB, Fail2ban – mit sinnvollen Standardwerten)
-- **Zusatzoptionen** (Let’s Encrypt, Web‑Updater, Redis‑Session, erweiterte config.php, empfohlene Apps)
+- **Zusatzoptionen** (Let's Encrypt, Web‑Updater, Redis‑Session, erweiterte config.php, empfohlene Apps)
 
-Nach Bestätigung der Zusammenfassung läuft die Installation vollautomatisch.
+Nach Bestätigung der Zusammenfassung läuft die Installation **vollautomatisch** ab.
 
 ---
 
 ## 📂 Nach der Installation
 
-- **Zugang:** `http://<domain-oder-ip>` (bei Let’s Encrypt HTTPS)
-- **Admin‑Credentials:** werden in der Abschlussausgabe angezeigt
-- **Installationsverzeichnis:** `/var/www/html/nextcloud` (Standard)
-- **Log‑Datei:** `/var/log/nextcloud-install.log`
+| Was | Wo |
+|-----|-----|
+| **Zugang** | `http://<domain-oder-ip>` (bei Let's Encrypt HTTPS) |
+| **Admin‑Credentials** | werden in der Abschlussausgabe angezeigt |
+| **Installationsverzeichnis** | `/var/www/html/nextcloud` (Standard) |
+| **Datenverzeichnis** | `/var/www/html/nextcloud/data` (Standard) |
+| **Log‑Datei** | `/var/log/nextcloud-install.log` |
+
+---
+
+## 🎯 Warum dieses Skript?
+
+- ❌ **Manuelle Installation** – viele Schritte, Fehleranfällig
+- ✅ **Setup-Wizard** – 5 Minuten, interaktiv, optimiert, sicher
 
 ---
 
@@ -63,10 +97,11 @@ Nach Bestätigung der Zusammenfassung läuft die Installation vollautomatisch.
 
 ## 🤝 Beiträge
 
-Issues und Pull Requests sind willkommen.
+Issues und Pull Requests sind willkommen!  
+Bei Fragen oder Verbesserungsvorschlägen einfach ein Issue öffnen.
 
 ---
 
 <p align="center">
-  NeuSmartRa | Systems – 2026
+  <b>NeuSmartRa</b> | Systems – 2026
 </p>
