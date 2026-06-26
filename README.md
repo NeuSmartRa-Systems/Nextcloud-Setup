@@ -1,5 +1,4 @@
-# 🚀 Nextcloud – Zero‑Touch Deployment
-
+# 🚀 Nextcloud – Setup-Wizard
 **Ein interaktives Bash‑Skript für die automatisierte Installation und Optimierung von Nextcloud auf Debian/Ubuntu.**
 
 ---
