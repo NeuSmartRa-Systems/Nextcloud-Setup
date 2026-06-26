@@ -67,4 +67,3 @@ Issues und Pull Requests sind willkommen.
 <p align="center">
   NeuSmartRa | Systems – 2026
 </p>
-```
