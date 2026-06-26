@@ -1,76 +1,71 @@
-# Nextcloud Setup
+```markdown
+# 🚀 Nextcloud – Zero‑Touch Deployment
 
-**Interaktives Bash‑Skript zur automatisierten Installation und Optimierung von Nextcloud auf Debian/Ubuntu.**
-
-![GPLv3](https://img.shields.io/badge/License-GPLv3-blue.svg)
-![Bash](https://img.shields.io/badge/Bash-5.0+-green)
+**Ein interaktives Bash‑Skript für die automatisierte Installation und Optimierung von Nextcloud auf Debian/Ubuntu.**
 
 ---
 
-## Features
+## ✨ Features
 
-| Komponente | Funktion |
-|------------|----------|
-| **Installation** | Apache, MariaDB, Redis, Fail2ban, PHP‑Erweiterungen |
-| **Optimierung** | PHP (upload, memory, opcache), MariaDB (InnoDB, connections), Apache (mpm_prefork) |
-| **Sicherheit** | MariaDB‑Härtung, Fail2ban‑Filter für Nextcloud‑Logs |
-| **Betrieb** | Cron‑Job (alle 5 min), vollständiges Logging (`/var/log/nextcloud-install.log`) |
-| **Netzwerk** | Domain, lokale IP, Reverse‑Proxy (z.B. Caddy) |
+- **All-in-One:** Apache2, MariaDB, Redis, Fail2ban, PHP‑Erweiterungen
+- **Optimierung:** PHP (upload, memory, opcache), MariaDB (InnoDB), Apache (mpm_prefork)
+- **Sicherheit:** MariaDB‑Härtung, Fail2ban‑Filter für Nextcloud‑Logs, Redis‑Passwort
+- **Betrieb:** Cron‑Job, Log‑Rotation, vollständiges Installations‑Log
+- **Erweitert:** Let’s Encrypt, Web‑Updater, Redis‑Session, empfohlene Apps (Calendar, Contacts, Talk, OnlyOffice, Deck, Tasks, Notes)
 
 ---
 
-## Installation
+## 🖥️ Installation
 
 ```bash
-git clone https://github.com/NeuSmartRa/nextcloud-deploy.git
-cd nextcloud-deploy
-chmod +x nextcloud-deploy.sh
-sudo ./nextcloud-deploy.sh
+git clone https://github.com/NeuSmartRa-Systems/Nextcloud-Setup.git
+cd Nextcloud-Setup
+chmod +x Nextcloud-Setup.sh
+sudo ./Nextcloud-Setup.sh
 ```
 
-Das Skript prüft und installiert fehlende Abhängigkeiten (`curl`, `gpg`, `sudo`, `gum`) automatisch.
+Das Skript installiert fehlende Abhängigkeiten (curl, gpg, sudo, gum) selbstständig.
 
 ---
 
-## Konfigurationsoptionen
+## ⚙️ Interaktive Konfiguration
 
-| Bereich | Abfrage |
-|---------|---------|
-| **Pakete** | Apache, MariaDB, Redis, Fail2ban (ja/nein) |
-| **Netzwerk** | Domain, lokale IP, Proxy‑IP (optional) |
-| **Admin** | Benutzername / Passwort (generiert bei Leer‑Eingabe) |
-| **Datenbank** | Name, Benutzer, Passwort (generiert bei Leer‑Eingabe) |
-| **Optimierung** | PHP, MariaDB, Fail2ban (mit Standardvorschlägen) |
-| **Pfad** | Installationsverzeichnis (Standard: `/var/www/html/nextcloud`) |
+Während der Ausführung werden Sie Schritt für Schritt gefragt:
 
-Nach der Bestätigung der Zusammenfassung läuft die Installation vollautomatisch.
+- **Pakete** (Apache, MariaDB, Redis, Fail2ban)
+- **Netzwerk** (Domain, lokale IP, Proxy‑IP, trusted_domains)
+- **Admin‑Benutzer** (Name, Passwort – bei Leer‑Eingabe wird eines generiert)
+- **Datenbank** (Name, Benutzer, Passwort, Root‑Passwort)
+- **Pfade** (Installations‑ und Datenverzeichnis)
+- **Optimierungen** (PHP, MariaDB, Fail2ban – mit sinnvollen Standardwerten)
+- **Zusatzoptionen** (Let’s Encrypt, Web‑Updater, Redis‑Session, erweiterte config.php, empfohlene Apps)
+
+Nach Bestätigung der Zusammenfassung läuft die Installation vollautomatisch.
 
 ---
 
-## Nach der Installation
+## 📂 Nach der Installation
 
-- **Zugang:** `http://<domain-oder-ip>`
+- **Zugang:** `http://<domain-oder-ip>` (bei Let’s Encrypt HTTPS)
 - **Admin‑Credentials:** werden in der Abschlussausgabe angezeigt
-- **Installationsverzeichnis:** `/var/www/html/nextcloud`
+- **Installationsverzeichnis:** `/var/www/html/nextcloud` (Standard)
 - **Log‑Datei:** `/var/log/nextcloud-install.log`
 
-Für HTTPS wird der Einsatz von **Caddy** oder **Certbot** empfohlen.
+---
+
+## 📜 Lizenz
+
+**GNU General Public License v3.0** – Nutzung, Modifikation und Weitergabe erlaubt unter gleichen Bedingungen.
 
 ---
 
-## Lizenz
+## 🤝 Beiträge
 
-**GNU General Public License v3.0**  
-Nutzung, Modifikation und Weitergabe erlaubt – jedoch nur unter gleichen Lizenzbedingungen. Kommerzielle Nutzung ist gestattet, jedoch nicht als proprietäres Produkt.
-
----
-
-## Beiträge
-
-Issues und Pull Requests werden bearbeitet.
+Issues und Pull Requests sind willkommen.
 
 ---
 
 <p align="center">
   NeuSmartRa | Systems – 2026
 </p>
+```
